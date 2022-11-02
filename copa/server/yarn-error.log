@@ -1,0 +1,59 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add -D @types/fastify
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-11.0.11_9\bin;C:\Users\mauri\AppData\Local\Android\Sdk\emulator;C:\Users\mauri\AppData\Local\Android\Sdk\tools;C:\Users\mauri\AppData\Local\Android\Sdk\tools\bin;C:\Users\mauri\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\dotnet\;C:\Users\mauri\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Users\mauri\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\mauri\AppData\Local\Programs\Python\Python310\;C:\Users\mauri\AppData\Local\Microsoft\WindowsApps;C:\Users\mauri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mauri\AppData\Roaming\npm;C:\Users\mauri\AppData\Local\Android\Sdk\emulator;C:\Users\mauri\AppData\Local\Android\Sdk\tools;C:\Users\mauri\AppData\Local\Android\Sdk\tools\bin;C:\Users\mauri\AppData\Local\Android\Sdk\platform-tools;C:\Users\mauri\AppData\Roaming\Composer\vendor\bin;C:\Users\mauri\.dotnet\tools;C:\Users\mauri\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\mauri\AppData\Local\Yarn\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2ffastify: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66145:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:390:28)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:390:28)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:509:28)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "tsx watch src/index.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+      "@prisma/client": "^4.5.0",
+      "fastify": "^4.9.2"
+    },
+    "devDependencies": {
+      "@mermaid-js/mermaid-cli": "^9.1.7",
+      "prisma": "^4.5.0",
+      "prisma-erd-generator": "^1.2.2",
+      "tsx": "^3.11.0",
+      "typescript": "^4.8.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
