@@ -36,6 +36,22 @@ async function main() {
       date: "2022-11-10T12:00:00.583Z",
       firstTeamCountryCode: "BR",
       secondTeamCountryCode: "AR",
+
+      guesses: {
+        create: {
+          firstTeamPoins: 2,
+          secondTeamPoins: 2,
+
+          participants: {
+            connect: {
+              userId_poolId: {
+                poolId: pool.id,
+                userId: user.id,
+              },
+            },
+          },
+        },
+      },
     },
   });
 }
