@@ -73,13 +73,13 @@ export async function poolRoutes(fastify: FastifyInstance) {
       });
 
       if (!pool) {
-        return reply.status(404).send({ message: "Esse bolão não existe!" });
+        return reply.status(404).send({ message: "Pool not found" });
       }
 
       if (pool.participants.length > 0) {
         return reply
           .status(200)
-          .send({ message: "Você já se inscreveu neste bolão" });
+          .send({ message: "You already joined this pool" });
       }
 
       if (!pool.ownerId) {
@@ -149,48 +149,44 @@ export async function poolRoutes(fastify: FastifyInstance) {
     }
   );
 
-  fastify.get(
-    "/pools/:id",
-    { onRequest: [authenticate] },
-    async (request) => {
-      const getPoolParams = z.object({
-        id: z.string(),
-      });
+  fastify.get("/pools/:id", { onRequest: [authenticate] }, async (request) => {
+    const getPoolParams = z.object({
+      id: z.string(),
+    });
 
-      const { id } = getPoolParams.parse(request.params);
+    const { id } = getPoolParams.parse(request.params);
 
-      const pool = await prisma.pool.findUnique({
-        where: {
-          id,
-        },
-        include: {
-          _count: {
-            select: {
-              participants: true,
-            },
+    const pool = await prisma.pool.findUnique({
+      where: {
+        id,
+      },
+      include: {
+        _count: {
+          select: {
+            participants: true,
           },
+        },
 
-          participants: {
-            select: {
-              id: true,
-              user: {
-                select: {
-                  avatarUrl: true,
-                },
+        participants: {
+          select: {
+            id: true,
+            user: {
+              select: {
+                avatarUrl: true,
               },
             },
-            take: 4,
           },
-          owner: {
-            select: {
-              id: true,
-              name: true,
-            },
+          take: 4,
+        },
+        owner: {
+          select: {
+            id: true,
+            name: true,
           },
         },
-      });
+      },
+    });
 
-      return { pool };
-    }
-  );
+    return { pool };
+  });
 }
