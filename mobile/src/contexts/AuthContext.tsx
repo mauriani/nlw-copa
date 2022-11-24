@@ -48,12 +48,12 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
   }
 
   async function signInWithGoogle(access_token: string) {
-    //console.log("TOKEN", access_token);
-
     try {
       setIsUserLoading(true);
 
       const tokenResponse = await api.post("/users", { access_token });
+
+      console.log(tokenResponse.data);
 
       api.defaults.headers.common[
         "Authorization"
@@ -79,10 +79,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
     <AuthContext.Provider
       value={{
         signIn,
-        user: {
-          name: "Mauriani",
-          avatarUrl: "",
-        },
+        user: user,
         isUserLoading,
       }}
     >

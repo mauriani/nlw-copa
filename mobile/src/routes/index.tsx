@@ -7,6 +7,7 @@ import { Box } from "native-base";
 
 export function Routes() {
   const { user } = useAuth();
+  console.log(user);
   return (
     <Box flex={1} bg="gray.900">
       <NavigationContainer>
