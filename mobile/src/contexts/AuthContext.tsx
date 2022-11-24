@@ -27,6 +27,8 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
   const [isUserLoading, setIsUserLoading] = useState(false);
   const [user, setUser] = useState<UserProps>({} as UserProps);
 
+  console.log(process.env.CLIENT_ID);
+
   const [request, response, promptAsync] = Google.useAuthRequest({
     clientId:
       "921913547861-jj621oosdhh189veav2m14o814hfnm6e.apps.googleusercontent.com",
@@ -52,8 +54,6 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
       setIsUserLoading(true);
 
       const tokenResponse = await api.post("/users", { access_token });
-
-      console.log(tokenResponse.data);
 
       api.defaults.headers.common[
         "Authorization"

@@ -47,8 +47,8 @@ export function Guesses({ poolId }: Props) {
       }
 
       await api.post(`/pools/${poolId}/games/${gameId}/guesses`, {
-        firstTeamPoints: Number(firstTeamPoints),
-        secondTeamPoints: Number(secondTeamPoints),
+        firstTeamPoins: parseInt(firstTeamPoints),
+        secondTeamPoins: parseInt(secondTeamPoints),
       });
 
       toast.show({
@@ -59,7 +59,7 @@ export function Guesses({ poolId }: Props) {
 
       fetchGetGames();
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
 
       toast.show({
         title: "Não foi possível enviar o palpite",
