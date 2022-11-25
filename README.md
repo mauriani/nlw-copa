@@ -1,8 +1,7 @@
 <p align="center">
-  <img alt="NLW Copa" src=".github/logo.svg" />
+  <img alt="NLW Copa" src="https://user-images.githubusercontent.com/32397288/203979862-a6041f31-cd9b-4314-83f5-abcda0758e99.png" />
 </p>
 
-<img src=".github/web.png">
 
 ## 💻 Projeto
 
